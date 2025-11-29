@@ -31,6 +31,15 @@ El Semillero Zero2Hero 2025 es un programa intensivo diseñado para desarrollar 
 
 ## 🌐 Ver CV Moderno
 
+### 🚀 Acceso Público (GitHub Pages)
+Tu CV está disponible públicamente en:
+
+**👉 [https://Gondap.github.io/semillero-2025-Gonzalo-Acosta/](https://Gondap.github.io/semillero-2025-Gonzalo-Acosta/)**
+
+Esta es la URL que puedes compartir con empleadores, mentores y colegas.
+
+---
+
 ### Versión Clásica (HTML + CSS)
 Página web personal tipo CV con estructura HTML5 semántica y estilos CSS3 profesionales.
 
