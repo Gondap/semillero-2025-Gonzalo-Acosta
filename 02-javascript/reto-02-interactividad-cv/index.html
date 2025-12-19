@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gonzalo Acosta | Industrial Cyberpunk CV</title>
+  <title>Gonzalo Acosta | Industrial Cyberpunk CV Premium</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
+  <!-- Efectos de Fondo -->
+  <div class="bg-glow"></div>
+  <div class="grid-overlay"></div>
+  <canvas id="particles-canvas"></canvas>
+
   <!-- Navegación -->
   <nav class="navbar">
-    <div class="nav-container">
+    <div class="container nav-container">
       <div class="nav-brand">
         <span class="brand-logo">GA</span>
         <span class="brand-name">PORTAFOLIO / cv</span>
@@ -32,7 +37,7 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-container">
+    <div class="container hero-container">
       <div class="hero-content">
         <p class="hero-tagline">INGENIERO MECATRÓNICO · IA · INDUSTRIA 4.0</p>
         <h1 class="hero-title">Hola, soy <span class="highlight">Gonzalo Acosta</span>.</h1>
@@ -42,8 +47,8 @@
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-value">+7 años</span>
-            <span class="stat-label">Experiencia</span>
+            <span class="stat-value">+7</span>
+            <span class="stat-label">Años Exp</span>
           </div>
           <div class="stat-item">
             <span class="stat-value">+10</span>
@@ -65,7 +70,7 @@
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="console-title">main.py</span>
+            <span class="console-title">profile_init.py</span>
           </div>
           <div class="console-body">
             <pre><code id="typing-code"></code></pre>
@@ -99,12 +104,12 @@
             <div class="info-card">
               <span class="card-icon">🤖</span>
               <h3>Robótica</h3>
-              <p>Diseño y optimización de sistemas autónomos.</p>
+              <p>Diseño y optimización de sistemas autónomos de alta precisión.</p>
             </div>
             <div class="info-card">
               <span class="card-icon">🧠</span>
               <h3>IA Aplicada</h3>
-              <p>Modelos predictivos para sistemas de producción.</p>
+              <p>Modelos predictivos avanzados para sistemas de producción inteligente.</p>
             </div>
           </div>
         </div>
@@ -157,11 +162,11 @@
     <!-- Experiencia -->
     <section id="experiencia" class="section experience">
       <div class="container">
-        <h2 class="section-title">Experiencia Profesional</h2>
+        <h2 class="section-title">Experiencia</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="time-marker">2023 — 2025</div>
-            <div class="time-content">
+            <div class="timeline-content">
               <h3>Manufacturing Systems Specialist IT</h3>
               <p class="company">International Motors</p>
               <p>Liderazgo en integración de hardware/software e implementación de soluciones IA para analítica predictiva.</p>
@@ -175,7 +180,7 @@
           </div>
           <div class="timeline-item">
             <div class="time-marker">2021 — 2023</div>
-            <div class="time-content">
+            <div class="timeline-content">
               <h3>Lead Engineer in 4.0 Industry</h3>
               <p class="company">DataSystems Group S.A de C.V.</p>
               <p>Coordinación de proyectos de optimización y monitoreo predictivo en planta SISAMEX.</p>
@@ -188,7 +193,7 @@
     <!-- Contacto -->
     <section id="contacto" class="section contact">
       <div class="container">
-        <h2 class="section-title">Hablemos de tu proyecto</h2>
+        <h2 class="section-title">Contacto</h2>
         <div class="contact-grid">
           <div class="contact-info">
             <p>¿Necesitas optimizar procesos industriales o implementar IA en tu planta? Estoy disponible para nuevas oportunidades.</p>
