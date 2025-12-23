@@ -3,34 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gonzalo Acosta | CV Profesional</title>
+  <title>Gonzalo Acosta | Ingeniero Mecatrónico & IA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
-  <!-- Efectos de Fondo -->
   <div class="bg-glow"></div>
   <div class="grid-overlay"></div>
   <canvas id="particles-canvas"></canvas>
 
-  <!-- Navegación -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="nav-brand">
         <span class="brand-logo">GA</span>
-        <span class="brand-name">PORTAFOLIO / cv</span>
+        <span class="brand-name">Gonzalo Acosta</span>
       </div>
       <div class="nav-links">
-        <a href="#sobre-mi" class="nav-item">Sobre mí</a>
-        <a href="#skills" class="nav-item">Skills</a>
-        <a href="#experiencia" class="nav-item">Experiencia</a>
+        <a href="#servicios" class="nav-item">Servicios</a>
+        <a href="#proyectos" class="nav-item">Proyectos</a>
+        <a href="#testimonios" class="nav-item">Testimonios</a>
         <a href="#contacto" class="nav-item">Contacto</a>
       </div>
       <div class="nav-actions">
         <button id="theme-toggle" class="theme-btn">🌙</button>
-        <a href="#" class="download-btn">Descargar CV</a>
+        <a href="#contacto" class="download-btn">Contactar</a>
       </div>
     </div>
   </nav>
@@ -39,19 +38,19 @@
   <header class="hero">
     <div class="container hero-container">
       <div class="hero-content">
-        <p class="hero-tagline">INGENIERO MECATRÓNICO · IA · INDUSTRIA 4.0</p>
-        <h1 class="hero-title">Hola, soy <span class="highlight">Gonzalo Acosta</span>.</h1>
+        <div class="hero-badge">🚀 Especialista en Industria 4.0 & IA</div>
+        <h1 class="hero-title">Transformando la <span class="highlight">manufactura</span> con inteligencia artificial</h1>
         <p class="hero-description">
-          Especialista en sistemas de manufactura avanzada y automatización. 
-          Transformo procesos industriales mediante inteligencia artificial y robótica aplicada.
+          +7 años de experiencia optimizando procesos industriales mediante robótica avanzada, 
+          sistemas predictivos y automatización inteligente.
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-value">+7</span>
-            <span class="stat-label">Años Exp</span>
+            <span class="stat-value">7+</span>
+            <span class="stat-label">Años</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">+10</span>
+            <span class="stat-value">10+</span>
             <span class="stat-label">Proyectos IA</span>
           </div>
           <div class="stat-item">
@@ -60,66 +59,135 @@
           </div>
         </div>
         <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary">Contáctame</a>
-          <a href="#experiencia" class="btn btn-outline">Ver Experiencia</a>
+          <a href="#contacto" class="btn btn-primary">Agendar Consulta</a>
+          <a href="#proyectos" class="btn btn-outline">Ver Proyectos</a>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="console-window">
-          <div class="console-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="console-title">profile_init.py</span>
-          </div>
-          <div class="console-body">
-            <pre><code id="typing-code"></code></pre>
-          </div>
-        </div>
-        <div class="profile-frame">
+        <div class="profile-card">
           <img src="profile.jpg" alt="Gonzalo Acosta" class="profile-img">
+          <div class="profile-overlay"></div>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="section about">
+    <!-- Servicios -->
+    <section id="servicios" class="section services">
       <div class="container">
-        <h2 class="section-title">Sobre mí</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              Apasionado por la ingeniería multidisciplinaria y el estudio de ciencias factuales. 
-              Mi enfoque combina el rigor técnico con soluciones tecnológicas innovadoras para 
-              mejorar la calidad de vida y la eficiencia industrial.
-            </p>
-            <p>
-              Ejerzo liderazgo en gestión de proyectos, guiando equipos multidisciplinarios hacia 
-              objetivos claros y unidades medibles en entornos de manufactura global.
-            </p>
+        <h2 class="section-title">Servicios Profesionales</h2>
+        <p class="section-subtitle">Soluciones integrales para optimizar tu operación industrial</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3>Automatización Robótica</h3>
+            <p>Diseño e implementación de sistemas robóticos de precisión para líneas de producción.</p>
+            <a href="#" class="service-link">Más información →</a>
           </div>
-          <div class="about-cards">
-            <div class="info-card">
-              <span class="card-icon">🤖</span>
-              <h3>Robótica</h3>
-              <p>Diseño y optimización de sistemas autónomos de alta precisión.</p>
+          <div class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3>IA Predictiva</h3>
+            <p>Modelos de machine learning para mantenimiento predictivo y optimización de procesos.</p>
+            <a href="#" class="service-link">Más información →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Análisis de Datos</h3>
+            <p>Extracción de insights críticos de tus datos industriales para mejora continua.</p>
+            <a href="#" class="service-link">Más información →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🏭</div>
+            <h3>Industria 4.0</h3>
+            <p>Transformación digital completa de tu planta con IoT y sistemas inteligentes.</p>
+            <a href="#" class="service-link">Más información →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos Destacados -->
+    <section id="proyectos" class="section projects">
+      <div class="container">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <p class="section-subtitle">Casos de éxito en optimización y automatización industrial</p>
+        <div class="projects-carousel">
+          <div class="project-card">
+            <div class="project-header">International Motors</div>
+            <h3>Sistema de Programación Automática</h3>
+            <p>Implementación de soluciones IA para programación de vehículos diesel y eléctricos, logrando 95% de eficiencia.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Machine Learning</span><span>Automatización</span>
             </div>
-            <div class="info-card">
-              <span class="card-icon">🧠</span>
-              <h3>IA Aplicada</h3>
-              <p>Modelos predictivos avanzados para sistemas de producción inteligente.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-header">DataSystems Group</div>
+            <h3>Monitoreo Predictivo</h3>
+            <p>Desarrollo de sistema de monitoreo predictivo para equipos críticos, mejorando disponibilidad en 90%.</p>
+            <div class="project-tags">
+              <span>IoT</span><span>Análisis Predictivo</span><span>Tiempo Real</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">Tenova Hyl</div>
+            <h3>Instrumentación Avanzada</h3>
+            <p>Especificación e instalación de sistemas de instrumentación en plantas de reducción de hierro.</p>
+            <div class="project-tags">
+              <span>P&ID</span><span>Instrumentación</span><span>Estándares Internacionales</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Testimonios -->
+    <section id="testimonios" class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">Lo que dicen mis colegas</h2>
+        <p class="section-subtitle">Opiniones de profesionales que han trabajado conmigo</p>
+        <div class="testimonials-carousel">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Gonzalo es un profesional excepcional. Su capacidad para integrar soluciones de IA en procesos complejos es extraordinaria."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Dr. Ingeniero</h4>
+                <span>Especialista en Manufactura</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Su liderazgo en proyectos multidisciplinarios ha transformado completamente nuestras operaciones. Altamente recomendado."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Gerente de Operaciones</h4>
+                <span>Industria Automotriz</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Gonzalo combina conocimiento técnico profundo con excelentes habilidades de comunicación. Un profesional de clase mundial."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Director de Proyecto</h4>
+                <span>Consultoría Industrial</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
     <section id="skills" class="section skills">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">Habilidades Técnicas</h2>
         <div class="skills-tabs">
           <button class="tab-btn active" data-tab="tech">Técnicas</button>
           <button class="tab-btn" data-tab="soft">Blandas</button>
@@ -129,13 +197,13 @@
             <div class="skill-group">
               <h3>Programación</h3>
               <div class="skill-tags">
-                <span>Python</span><span>C++</span><span>SQL</span><span>Git</span><span>Prompt Engineering</span>
+                <span>Python</span><span>C++</span><span>SQL</span><span>Git</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>Ingeniería</h3>
+              <h3>Herramientas</h3>
               <div class="skill-tags">
-                <span>SolidWorks</span><span>AutoCAD</span><span>Matlab</span><span>Navisworks</span><span>ServiceNow</span>
+                <span>SolidWorks</span><span>Matlab</span><span>ServiceNow</span><span>PowerBI</span>
               </div>
             </div>
           </div>
@@ -148,43 +216,6 @@
                 <span>Gestión de Proyectos</span><span>Liderazgo de Equipos</span><span>Comunicación</span>
               </div>
             </div>
-            <div class="skill-group">
-              <h3>Metodologías</h3>
-              <div class="skill-tags">
-                <span>Design Thinking</span><span>Manufactura Avanzada</span><span>R&D</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experiencia -->
-    <section id="experiencia" class="section experience">
-      <div class="container">
-        <h2 class="section-title">Experiencia</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="time-marker">2023 — 2025</div>
-            <div class="timeline-content">
-              <h3>Manufacturing Systems Specialist IT</h3>
-              <p class="company">International Motors</p>
-              <p>Liderazgo en integración de hardware/software e implementación de soluciones IA para analítica predictiva.</p>
-              <button class="expand-btn">Ver logros ▼</button>
-              <ul class="achievements hidden">
-                <li>Mantenimiento de SLA del 95% en ServiceNow.</li>
-                <li>99% de cumplimiento en sistemas de escaneo de inventario.</li>
-                <li>95% de éxito en programación de unidades diesel y eléctricas.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time-marker">2021 — 2023</div>
-            <div class="timeline-content">
-              <h3>Lead Engineer in 4.0 Industry</h3>
-              <p class="company">DataSystems Group S.A de C.V.</p>
-              <p>Coordinación de proyectos de optimización y monitoreo predictivo en planta SISAMEX.</p>
-            </div>
           </div>
         </div>
       </div>
@@ -194,29 +225,66 @@
     <section id="contacto" class="section contact">
       <div class="container">
         <h2 class="section-title">Contacto</h2>
-        <div class="contact-grid">
+        <p class="section-subtitle">Completa el formulario y me pondré en contacto en menos de 24 horas</p>
+        <div class="contact-wrapper">
           <div class="contact-info">
-            <p>¿Necesitas optimizar procesos industriales o implementar IA en tu planta? Estoy disponible para nuevas oportunidades.</p>
-            <div class="contact-links">
-              <a href="mailto:gonzalo.acostasoto@hotmail.com">📧 gonzalo.acostasoto@hotmail.com</a>
-              <a href="tel:+528115962587">📱 +52 811 596 2587</a>
-              <a href="https://www.linkedin.com/in/gonzaloacostasoto/" target="_blank">🔗 LinkedIn</a>
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <h4>Ubicación</h4>
+                <p>Monterrey, Nuevo León, México</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📧</span>
+              <div>
+                <h4>Email</h4>
+                <p>gonzalo.acostasoto@hotmail.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📱</span>
+              <div>
+                <h4>Teléfono</h4>
+                <p>+52 811 596 2587</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🔗</span>
+              <div>
+                <h4>LinkedIn</h4>
+                <p><a href="https://www.linkedin.com/in/gonzaloacostasoto/" target="_blank">Ver perfil</a></p>
+              </div>
             </div>
           </div>
           <form id="contact-form" class="contact-form">
             <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" required placeholder="Tu nombre">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" required placeholder="tu@email.com">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" placeholder="+52 55 1234 5678">
+            </div>
+            <div class="form-group">
+              <label for="service">Tipo de consulta</label>
+              <select id="service">
+                <option>Selecciona un servicio</option>
+                <option>Automatización Robótica</option>
+                <option>IA Predictiva</option>
+                <option>Análisis de Datos</option>
+                <option>Industria 4.0</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="message">Mensaje</label>
-              <textarea id="message" required placeholder="Cuéntame sobre tu propuesta..."></textarea>
+              <textarea id="message" placeholder="Cuéntame sobre tu proyecto..." rows="5"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            <button type="submit" class="btn btn-primary btn-large">Enviar Solicitud</button>
           </form>
         </div>
       </div>
@@ -225,8 +293,8 @@
 
   <footer class="footer">
     <div class="container">
-      <p>📍 Monterrey, Nuevo León, México</p>
-      <p>&copy; 2025 Gonzalo Acosta Soto. Diseñado para el Semillero Zero2Hero.</p>
+      <p>&copy; 2025 Gonzalo Acosta Soto | Ingeniero Mecatrónico</p>
+      <p>Semillero Zero2Hero 2025</p>
     </div>
   </footer>
 

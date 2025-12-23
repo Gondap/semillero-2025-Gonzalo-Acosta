@@ -1,30 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Efecto de escritura en la consola del Hero
-  const codeElement = document.getElementById('typing-code');
-  const codeText = `class GonzaloAcosta:
-    def __init__(self):
-        self.role = "Mechatronics Engineer"
-        self.focus = ["AI", "Industry 4.0", "Robotics"]
-        self.location = "Monterrey, MX"
-
-    def get_mission(self):
-        return "Transforming industry through innovation"
-
-# Initializing profile...
-gonzalo = GonzaloAcosta()
-print(gonzalo.get_mission())`;
-
-  let i = 0;
-  function typeCode() {
-    if (i < codeText.length) {
-      codeElement.textContent += codeText.charAt(i);
-      i++;
-      setTimeout(typeCode, 20);
-    }
-  }
-  typeCode();
-
-  // 2. Cambio de Tema (Dark/Light)
+  // 1. Tema Oscuro/Claro
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
 
@@ -36,7 +11,6 @@ print(gonzalo.get_mission())`;
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 
-  // Cargar tema guardado
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     body.classList.add('light-theme');
@@ -44,7 +18,7 @@ print(gonzalo.get_mission())`;
     themeToggle.textContent = '🌙';
   }
 
-  // 3. Tabs de Habilidades
+  // 2. Tabs de Habilidades
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.skills-content');
 
@@ -60,18 +34,7 @@ print(gonzalo.get_mission())`;
     });
   });
 
-  // 4. Secciones Expandibles (Logros)
-  const expandBtns = document.querySelectorAll('.expand-btn');
-  
-  expandBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const achievements = btn.nextElementSibling;
-      achievements.classList.toggle('hidden');
-      btn.textContent = achievements.classList.contains('hidden') ? 'Ver logros ▼' : 'Ocultar logros ▲';
-    });
-  });
-
-  // 5. Validación de Formulario
+  // 3. Validación de Formulario
   const contactForm = document.getElementById('contact-form');
   
   contactForm.addEventListener('submit', (e) => {
@@ -81,22 +44,44 @@ print(gonzalo.get_mission())`;
     const message = document.getElementById('message').value;
 
     if (name && email && message) {
-      alert(`¡Gracias ${name}! Tu mensaje ha sido enviado (simulación).`);
+      showToast(`¡Gracias ${name}! Tu solicitud ha sido enviada.`, 'success');
       contactForm.reset();
     } else {
-      alert('Por favor, completa todos los campos.');
+      showToast('Por favor, completa todos los campos requeridos.', 'error');
     }
   });
 
-  // 6. Animación de entrada al hacer scroll
+  // 4. Toast Notifications
+  function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      background: ${type === 'success' ? '#10b981' : '#ef4444'};
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 2000;
+      animation: slideIn 0.3s ease;
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // 5. Animación de entrada al scroll
   const observerOptions = {
-    threshold: 0.1
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-up');
+        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
         observer.unobserve(entry.target);
       }
     });
@@ -106,7 +91,7 @@ print(gonzalo.get_mission())`;
     observer.observe(section);
   });
 
-  // 7. Efecto de Partículas Sutiles
+  // 6. Efecto de Partículas
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
   let particles = [];
@@ -123,10 +108,10 @@ print(gonzalo.get_mission())`;
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 1.5;
-      this.speedX = Math.random() * 0.5 - 0.25;
-      this.speedY = Math.random() * 0.5 - 0.25;
-      this.opacity = Math.random() * 0.5;
+      this.size = Math.random() * 1;
+      this.speedX = Math.random() * 0.3 - 0.15;
+      this.speedY = Math.random() * 0.3 - 0.15;
+      this.opacity = Math.random() * 0.3;
     }
 
     update() {
@@ -140,7 +125,7 @@ print(gonzalo.get_mission())`;
     }
 
     draw() {
-      ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity})`;
+      ctx.fillStyle = `rgba(16, 185, 129, ${this.opacity})`;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
@@ -149,7 +134,7 @@ print(gonzalo.get_mission())`;
 
   function initParticles() {
     particles = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
       particles.push(new Particle());
     }
   }
@@ -165,4 +150,44 @@ print(gonzalo.get_mission())`;
 
   initParticles();
   animateParticles();
+
+  // 7. Smooth Scroll para navegación
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // 8. Agregar estilos de animación
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 });
