@@ -1,5 +1,5 @@
 /* ============================================
-   PROFESSIONAL PORTFOLIO - INSPIRED BY MEDICAL LANDING
+   PROFESSIONAL PORTFOLIO - CORRECTED VERSION
    ============================================ */
 
 :root {
@@ -27,8 +27,8 @@
   --text-main: #0f172a;
   --text-muted: #475569;
   --border-color: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -72,16 +72,17 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Navbar */
+/* Navbar - CORRECTED FOR LIGHT MODE */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.95);
+  background: var(--bg-card);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
   z-index: 1000;
   padding: 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -403,13 +404,11 @@ body {
   color: var(--accent-primary);
 }
 
-/* Projects Carousel */
-.projects-carousel {
+/* Projects Grid */
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
 }
 
 .project-card {
@@ -418,7 +417,6 @@ body {
   border-radius: 12px;
   padding: 2rem;
   transition: var(--transition);
-  min-width: 300px;
 }
 
 .project-card:hover {
@@ -444,8 +442,34 @@ body {
 .project-card p {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
+}
+
+.project-achievements {
+  background: rgba(16, 185, 129, 0.05);
+  border-left: 3px solid var(--accent-secondary);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.project-achievements strong {
+  color: var(--accent-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.project-achievements ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-achievements li {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 .project-tags {
@@ -463,50 +487,63 @@ body {
   color: var(--accent-secondary);
 }
 
-/* Testimonials */
-.testimonials-carousel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
 }
 
-.testimonial-card {
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-secondary);
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  margin-left: 100px;
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -70px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-secondary);
+  border: 3px solid var(--bg-dark);
+  border-radius: 50%;
+}
+
+.timeline-content {
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: var(--transition);
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
-.testimonial-card:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 12px 24px rgba(0, 242, 255, 0.1);
-}
-
-.testimonial-content p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.author-info h4 {
+.timeline-content h3 {
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-bottom: 0.25rem;
 }
 
-.author-info span {
+.timeline-role {
   color: var(--accent-secondary);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Skills */
@@ -535,36 +572,50 @@ body {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.skill-group {
+.skill-category {
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   padding: 1.5rem;
+  transition: var(--transition);
 }
 
-.skill-group h3 {
+.skill-category:hover {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.1);
+}
+
+.skill-category h3 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: var(--text-main);
 }
 
-.skill-tags {
+.skill-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.skill-tags span {
-  background: rgba(16, 185, 129, 0.1);
+.skill-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(0, 242, 255, 0.1));
   border: 1px solid var(--accent-secondary);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 20px;
   font-size: 0.85rem;
   color: var(--accent-secondary);
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.skill-card:hover {
+  background: rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Contact */
@@ -605,6 +656,11 @@ body {
   color: var(--accent-secondary);
   text-decoration: none;
   font-weight: 700;
+  transition: var(--transition);
+}
+
+.info-item a:hover {
+  color: var(--accent-primary);
 }
 
 .contact-form {
@@ -638,6 +694,13 @@ body {
   transition: var(--transition);
 }
 
+.light-theme .form-group input,
+.light-theme .form-group textarea,
+.light-theme .form-group select {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-main);
+}
+
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
   outline: none;
   border-color: var(--accent-secondary);
@@ -658,10 +721,13 @@ body {
   .hero-title { font-size: 2.5rem; }
   .hero-container { grid-template-columns: 1fr; }
   .contact-wrapper { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
   .hero-stats { flex-direction: row; gap: 1.5rem; }
   .hero-actions { flex-direction: column; }
+  .timeline::before { left: 15px; }
+  .timeline-marker { left: -25px; }
+  .timeline-item { margin-left: 50px; }
 }

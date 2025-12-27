@@ -18,19 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = '🌙';
   }
 
-  // 2. Tabs de Habilidades
+  // 2. Tabs de Habilidades - CORRECTED FUNCTIONALITY
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.skills-content');
 
   tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const tabId = btn.getAttribute('data-tab');
       
+      // Remove active class from all buttons and contents
       tabBtns.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
       
+      // Add active class to clicked button and corresponding content
       btn.classList.add('active');
-      document.getElementById(tabId).classList.add('active');
+      const targetContent = document.getElementById(tabId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
     });
   });
 
@@ -39,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
     if (name && email && message) {
       showToast(`¡Gracias ${name}! Tu solicitud ha sido enviada.`, 'success');
@@ -67,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       font-weight: 600;
       z-index: 2000;
       animation: slideIn 0.3s ease;
+      font-family: 'Inter', sans-serif;
     `;
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
@@ -188,6 +195,25 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 1;
       }
     }
+
+    .skills-content {
+      display: none;
+    }
+
+    .skills-content.active {
+      display: block;
+      animation: fadeInUp 0.4s ease;
+    }
   `;
   document.head.appendChild(style);
+
+  // 9. Inicializar el primer tab como activo
+  const firstTab = document.querySelector('.tab-btn.active');
+  if (firstTab) {
+    const tabId = firstTab.getAttribute('data-tab');
+    const firstContent = document.getElementById(tabId);
+    if (firstContent) {
+      firstContent.classList.add('active');
+    }
+  }
 });
